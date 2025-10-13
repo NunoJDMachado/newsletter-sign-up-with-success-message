@@ -1,0 +1,93 @@
+@layer reset, theme, base, components, utils;
+
+@layer reset {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    * {
+        margin: 0;
+    }
+
+    button {
+        cursor: pointer;
+    }
+}
+
+@layer theme {
+    @font-face {
+        font-family: 'Roboto';
+        src: url('/assets/fonts/Roboto-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        src: url('/assets/fonts/Roboto-Bold.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    :root {
+        --font-bold: 700;
+
+        --white: hsl(0, 0%, 100%);
+        --grey: hsl(0, 0%,58%);
+        --blue-800: hsl(234, 29%, 20%);
+        --blue-700: hsl(235, 18%, 26%);
+        --red: hsl(4, 100%, 67%);
+
+        --gradient-start: hsl(15, 100%, 61%);
+        --gradient-end: hsl(346, 100, 66);
+
+        --spacing-100: 0.5rem; /* 8px */
+        --spacing-200: 1rem; /* 16px */
+        --spacing-300: 1.5rem; /* 24px */
+        --spacing-400: 2rem; /* 32px */
+        --spacing-500: 2.5rem; /* 40px */
+        --spacing-600: 3rem; /* 48px */
+        --spacing-800: 4rem; /* 64px */
+        --spacing-900: 4.5rem; /* 72px */
+        --spacing-1300: 6.5rem; /* 104px */
+    }
+}
+
+@layer base {
+    body {
+        font-family: Roboto, sans-serif;
+        letter-spacing: 0;
+        font-weight: 400;
+        line-height: 1.5;
+        font-size: 1rem;
+    }
+}
+
+@layer components {
+
+}
+
+@layer utils {
+    .text-preset-1,
+    .text-preset-2-bold,
+    .text-preset-3 {
+        font-weight: var(--font-bold);
+    }
+
+    .text-preset-1 {
+        font-size: 2.5rem;
+        line-height: 1;
+
+        @media (width >= 640px) {
+            font-size: 3.5rem;
+        }
+    }
+
+    .text-preset-3 {
+        font-size: 0.75rem;
+    }
+}
