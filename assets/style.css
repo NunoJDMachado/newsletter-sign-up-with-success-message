@@ -11,6 +11,11 @@
         margin: 0;
     }
 
+    input,
+    button {
+        font-family: inherit;
+    }
+
     button {
         cursor: pointer;
     }
@@ -59,16 +64,147 @@
 
 @layer base {
     body {
+        background-color: var(--blue-700);
         font-family: Roboto, sans-serif;
         letter-spacing: 0;
         font-weight: 400;
         line-height: 1.5;
         font-size: 1rem;
     }
+
+    @media (width >= 640px) {
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 73px 80px;
+        }
+    }
 }
 
 @layer components {
+    .main {
+        background-color: var(--white);
+    }
 
+    .section {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-500);
+        padding: var(--spacing-500) var(--spacing-300);
+        padding-block-end: 2.75rem;
+
+        .article {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-300);
+
+            h1 {
+                color: var(--blue-800);
+            }
+
+            p {
+                color: var(--blue-800);
+            }
+            
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: var(--spacing-100);
+                list-style: none;
+                padding: 0;
+            }
+
+            li {
+                display: flex;
+                gap: var(--spacing-200);
+                color: var(--blue-800);
+
+                &::before {
+                    content: url('/assets/images/icon-list.svg');
+                }
+            }
+        }
+
+        form {
+            --border-radius: 8px;
+
+            display: flex;
+            flex-direction: column;
+
+            label {
+                color: var(--blue-800);
+                margin-block-end: var(--spacing-100);
+            }
+    
+            input {
+                color: var(--grey);
+                font-size: inherit;
+                border-radius: var(--border-radius);
+                border: 1px solid var(--grey);
+                padding: var(--spacing-200) var(--spacing-300);
+                margin-block-end: var(--spacing-300);
+            }
+    
+            button {
+                background-color: var(--blue-800);
+                color: var(--white);
+                border: none;
+                border-radius: var(--border-radius);
+                padding: var(--spacing-200) var(--spacing-600);
+            }
+        }
+    }
+
+    @media (width >= 640px) {
+        .main {
+            padding: 42.86px var(--spacing-500);
+            border-radius: 36px;
+        }
+
+        .section {
+            padding: 0;
+            padding-block-start: var(--spacing-500);
+            gap: var(--spacing-300);
+
+            form input {
+                margin-block-end: var(--spacing-200);
+            }
+        }
+    }
+
+    @media (width >= 1024px) {
+        .main {
+            width: 904px;
+            height: 641px;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            gap: var(--spacing-800);
+            padding-block: var(--spacing-300);
+            padding-inline: var(--spacing-400);
+        }
+
+        picture {
+            display: flex;
+        }
+
+        .section {
+            gap: var(--spacing-400);
+            padding: 0;
+
+            .article {
+                gap: var(--spacing-400);
+            }
+
+            form {
+                input {
+                    margin-block-end: var(--spacing-300);
+                }
+            }
+        }
+    }
 }
 
 @layer utils {
