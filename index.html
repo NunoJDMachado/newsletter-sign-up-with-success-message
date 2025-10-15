@@ -9,7 +9,7 @@
     <script src="assets/app.js" defer></script>
 </head>
 <body>
-    <main class="main">
+    <main class="main hidden">
         <picture>
             <source srcset="assets/images/illustration-sign-up-desktop.svg" media="(width >= 1024px)">
             <source srcset="assets/images/illustration-sign-up-tablet.svg" media="(width >= 640px)">
@@ -30,11 +30,26 @@
             </article>
 
             <form>
-                <label for="" class="text-preset-3">Email address</label>
-                <input type="email" placeholder="email@company.com">
-                <button type="submit" class="text-preset-2-bold">Subscribe to monthly newsletter</button>
+                <label for="email" class="text-preset-3">
+                    Email address
+                    <span class="email-error">Valid email required</span>
+                </label>
+                <input type="email" id="email" placeholder="email@company.com">
+                <button type="submit" class="btn-blue text-preset-2-bold">Subscribe to monthly newsletter</button>
             </form>
         </section>
     </main>
+
+    <section class="success-page">
+        <article>
+            <img src="assets/images/icon-success.svg" alt="Success icon">
+
+            <h1 class="text-preset-1">Thanks for subscribing!</h1>
+
+            <p class="text-preset-2">A confirmation email has been sent to <span class="text-preset-2-bold">ash@loremcompany.com</span>. Please open it and click the button inside to confirm your subscription.</p>
+        </article>
+
+        <button class="btn-blue btn-blue-shadow text-preset-2-bold">Dismiss message</button>
+    </section>
 </body>
 </html>
