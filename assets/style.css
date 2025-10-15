@@ -48,7 +48,7 @@
         --red: hsl(4, 100%, 67%);
 
         --gradient-start: hsl(15, 100%, 61%);
-        --gradient-end: hsl(346, 100, 66);
+        --gradient-end: hsl(346, 100%, 66%);
 
         --spacing-100: 0.5rem; /* 8px */
         --spacing-200: 1rem; /* 16px */
@@ -152,13 +152,17 @@
             }
     
             input {
-                color: var(--grey);
+                color: var(--blue-800);
                 font-size: inherit;
                 border-radius: var(--border-radius);
                 border: 1px solid var(--grey);
                 padding-block: var(--spacing-200);
                 padding-inline: var(--spacing-300);
                 margin-block-end: var(--spacing-300);
+
+                &::placeholder {
+                    color: var(--grey);
+                }
             }
     
             button {
@@ -168,6 +172,10 @@
                 border-radius: var(--border-radius);
                 padding-block: var(--spacing-200);
                 padding-inline: var(--spacing-600);
+
+                &:hover {
+                    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+                }
             }
         }
     }
