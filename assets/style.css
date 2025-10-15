@@ -280,6 +280,8 @@
         background-color: var(--blue-800);
         color: var(--white);
         border-radius: var(--btn-border-radius);
+        font-size: inherit;
+        line-height: inherit;
         border: none;
         outline: none;
         padding-block: var(--spacing-200);
