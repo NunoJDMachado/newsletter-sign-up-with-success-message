@@ -41,7 +41,8 @@
     :root {
         --font-bold: 700;
 
-        --border-radius: 8px;
+        --main-border-radius: 36px;
+        --btn-border-radius: 8px;
 
         --white: hsl(0, 0%, 100%);
         --grey: hsl(0, 0%,58%);
@@ -162,7 +163,7 @@
             input {
                 color: var(--blue-800);
                 font-size: inherit;
-                border-radius: var(--border-radius);
+                border-radius: var(--btn-border-radius);
                 border: 1px solid var(--grey);
                 outline: none;
                 padding-block: var(--spacing-200);
@@ -185,7 +186,7 @@
     @media (width >= 640px) {
         .main {
             flex-grow: 0;
-            border-radius: 36px;
+            border-radius: var(--main-border-radius);
             padding-block: 2.679rem;
             padding-inline: var(--spacing-500);
         }
@@ -248,14 +249,27 @@
             display: flex;
             flex-direction: column;
             gap: var(--spacing-400);
-        }
 
-        img {
-            width: var(--spacing-800);
-        }
+            img {
+                width: var(--spacing-800);
+            }
 
-        p {
-            color: var(--blue-800);
+            p {
+                color: var(--blue-800);
+            }
+        }
+    }
+
+    @media (width >= 640px) {
+        .success-page {
+            flex-grow: 0;
+            width: 504px;
+            height: 520px;
+            justify-content: start;
+            gap: var(--spacing-400);
+            border-radius: var(--main-border-radius);
+            padding-block: 3.75rem;
+            padding-inline: var(--spacing-800);
         }
     }
 }
@@ -265,7 +279,7 @@
     .btn-blue {
         background-color: var(--blue-800);
         color: var(--white);
-        border-radius: var(--border-radius);
+        border-radius: var(--btn-border-radius);
         border: none;
         outline: none;
         padding-block: var(--spacing-200);
