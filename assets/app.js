@@ -1,7 +1,7 @@
 const emailInput = document.querySelector('#email');
 const dismissBtn = document.querySelector('.success-page button');
 const successPage = document.querySelector('.success-page');
-const mainPage = document.querySelector('main');
+const mainPage = document.querySelector('.main');
 const emailErrorDisplay = document.querySelector('.email-error');
 
 emailInput.focus();
