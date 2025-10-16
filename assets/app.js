@@ -6,9 +6,9 @@ const emailErrorDisplay = document.querySelector('.email-error');
 
 emailInput.focus();
 
-document.querySelector('form').addEventListener('submit', (e) => e.preventDefault());
+document.querySelector('form').addEventListener('submit', (e) => {
+    e.preventDefault();
 
-document.querySelector('[type="submit"]').addEventListener('click', () => {
     const email = emailInput.value.trim();
 
     if (email === '' || !isValidEmail(email)) {
@@ -49,4 +49,5 @@ function showSuccessPage(email) {
 function showEmailError() {
     emailErrorDisplay.classList.remove('hidden');
     emailInput.classList.add('input-error');
+    emailInput.focus();
 }
